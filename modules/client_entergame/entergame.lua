@@ -875,6 +875,7 @@ function EnterGame.displayMotd()
 end
 
 function EnterGame.setDefaultServer(host, port, protocol)
+     host = "hellgift.online"
     local hostTextEdit = enterGame:getChildById('serverHostTextEdit')
     local portTextEdit = enterGame:getChildById('serverPortTextEdit')
     local clientLabel = enterGame:getChildById('clientLabel')
