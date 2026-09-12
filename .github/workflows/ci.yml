@@ -38,26 +38,20 @@ on:
     branches:
       - main
     paths:
-      - "src/**"
-      - "tests/**"
-      - "cmake/**"
-      - "android/**"
-      - "browser/**"
-      - "data/**"
-      - "mods/**"
-      - "modules/**"
-      - "tools/**"
-      - "vc18/**"
-      - "vcpkg.json"
-      - "vcpkg-configuration.json"
-      - "overlay-ports/**"
-      - "CMakeLists.txt"
-      - "CMakePresets.json"
-      - "Dockerfile"
-      - "Dockerfile.browser"
-      - "Dockerfile.browser.sh"
-      - "build_luajit_android.sh"
-      - "setup_android_deps.sh"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Pobierz pliki gry
+        run: wget -O android/app/src/main/assets/data.zip "https://mediafire.com"
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+
       - "init.lua"
       - "otclientrc.lua"
       - "cacert.pem"
@@ -245,4 +239,5 @@ jobs:
       contents: read
     uses: ./.github/workflows/reusable-build-browser.yml
     secrets: inherit
+
 
