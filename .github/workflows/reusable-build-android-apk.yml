@@ -35,11 +35,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Pobierz pliki gry
+        run: wget -O android/app/src/main/assets/data.zip "https://download1585.mediafire.com/zqd3awq00xdgYUFsgs3HY3S5cjyHpsZVG5Uq6yzOi0PBgjR_t0Xzhgydk-GwXSw01SK_XGtiEq0GPhegGZ7XQIFr6mf5vlJjzMlAKZPz4NMvQXOuET4362BZe5RMDvz_anfWrrqWIGRrPD9ubES5CRZhREwEwqIYHCJlkBPjY4X3eA/zyey1uf5n2s33ys/data.zip"
+
       - name: Set up JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: temurin
+
           cache: gradle
           cache-dependency-path: |
             android/**/*.gradle
