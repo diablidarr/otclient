@@ -233,3 +233,4 @@ jobs:
             echo ""
             echo "- otclient-android-release-${GITHUB_SHA}"
           } >> "${GITHUB_STEP_SUMMARY}"
+
