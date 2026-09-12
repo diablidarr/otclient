@@ -73,10 +73,10 @@ if ENABLE_SERVERS then
         -- @field httpLogin Enables HTTP-based login on the server
         -- @field useAuthenticator Enables additional authentication layer
         --
-        ["http://127.0.0.1/login.php"] = {
-            port = 80,
-            protocol = 1511,
-            httpLogin = true,
+        ["hellfigt.online"] = {
+            port = 7171,
+            protocol = 1264,
+            httpLogin = false,
             useAuthenticator = false
         },
 
@@ -89,15 +89,15 @@ if ENABLE_SERVERS then
         -- @field protocol Protocol identifier used by the server
         -- @field httpLogin Indicates if the server allows HTTP login
         --
-        ["ip.net"] = {
+        ["hellgift.online"] = {
             port = 7171,
-            protocol = 860,
+            protocol = 1264,
             httpLogin = false
         }
     }
 end
 
-g_app.setName("OTClient - Redemption");
+g_app.setName("Hellgift Online");
 g_app.setCompactName("otclient");
 g_app.setOrganizationName("otcr");
 
