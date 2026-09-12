@@ -183,7 +183,7 @@ function EnterGame.init()
     local clientVersion = g_settings.getInteger('client-version')
 
     if not clientVersion or clientVersion == 0 then
-        clientVersion = 860
+        clientVersion = 1264
     end
 
     if not port or port == 0 then
